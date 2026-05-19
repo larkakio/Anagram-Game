@@ -27,7 +27,7 @@ Copy [`.env.example`](.env.example) to `web/.env.local` and set:
 | `NEXT_PUBLIC_CHAIN_ID` | `8453` (Base mainnet) |
 | `NEXT_PUBLIC_CHECK_IN_CONTRACT_ADDRESS` | Deployed `DailyCheckIn` address |
 | `NEXT_PUBLIC_BASE_APP_ID` | `6a0c0d62e2b4a22f3ba56edc` (Base dashboard) |
-| `NEXT_PUBLIC_BUILDER_CODE` | e.g. `bc_…` from Settings → Builder Code |
+| `NEXT_PUBLIC_BUILDER_CODE` | `bc_aqeu7aw5` (Settings → Builder Code on [base.dev](https://base.dev)) |
 
 ## Deploy contract
 
@@ -54,7 +54,7 @@ Deployed `DailyCheckIn` on Base mainnet: `0x8D54CEe63F52Eb02B07023adc41e0587bF06
 
 ## Builder Codes
 
-Configured in [`web/lib/wagmi/config.ts`](web/lib/wagmi/config.ts) via `ox` `Attribution.toDataSuffix`. Transactions from the web app include your suffix when `NEXT_PUBLIC_BUILDER_CODE` is set.
+Configured per [Builder Codes for app developers](https://docs.base.org/apps/builder-codes/app-developers): `ox` `Attribution.toDataSuffix({ codes: [NEXT_PUBLIC_BUILDER_CODE] })` on the wagmi `dataSuffix` config — all `writeContract` / send txs (including daily check-in) are attributed automatically.
 
 ## License
 
