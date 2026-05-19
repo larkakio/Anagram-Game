@@ -1,0 +1,6 @@
+# GitHub Linguist: show Solidity as primary language (like other game repos)
+web/** linguist-vendored
+contracts/lib/** linguist-vendored
+
+*.sol linguist-language=Solidity
+*.sol linguist-detectable=true
