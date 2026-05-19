@@ -1,0 +1,30 @@
+# Dependencies
+web/node_modules/
+
+# Environment (never commit secrets)
+.env
+.env.local
+.env.*.local
+**/.env.local
+
+# Next.js
+web/.next/
+web/out/
+web/.vercel
+
+# Foundry
+contracts/cache/
+contracts/out/
+contracts/broadcast/
+
+# OS & logs
+.DS_Store
+*.log
+npm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+
+# Generated assets cache
+.cursor/

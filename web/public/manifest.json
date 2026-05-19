@@ -1,0 +1,17 @@
+{
+  "name": "Anagram Game",
+  "short_name": "Anagram",
+  "description": "Cyberpunk hex anagram puzzles on Base",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#00fff0",
+  "icons": [
+    {
+      "src": "/app-icon.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --void: #050508;
+  --void-mid: #0d0221;
+  --neon-cyan: #00fff0;
+  --neon-pink: #ff2a6d;
+  --neon-yellow: #f9f002;
+  --background: var(--void);
+  --foreground: #e8e8ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-orbitron);
+  --font-mono: var(--font-share-tech);
+}
+
+body {
+  background: radial-gradient(ellipse at 50% 0%, var(--void-mid) 0%, var(--void) 55%);
+  color: var(--foreground);
+  min-height: 100dvh;
+}
+
+.scanlines::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.12) 2px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+  opacity: 0.35;
+}
+
+.font-display {
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-share-tech), monospace;
+}
+
+.vault-panel {
+  border: 1px solid rgba(0, 255, 240, 0.25);
+  background: linear-gradient(
+    145deg,
+    rgba(13, 2, 33, 0.92) 0%,
+    rgba(5, 5, 8, 0.95) 100%
+  );
+  box-shadow:
+    0 0 24px rgba(0, 255, 240, 0.12),
+    inset 0 0 40px rgba(255, 42, 109, 0.04);
+}
+
+.hex-cell {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.hex-cell--idle {
+  border: 1px solid rgba(0, 255, 240, 0.2);
+  background: rgba(0, 255, 240, 0.06);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 255, 240, 0.08);
+}
+
+.hex-cell--active {
+  border: 1px solid var(--neon-cyan);
+  background: rgba(0, 255, 240, 0.2);
+  color: #fff;
+  box-shadow:
+    0 0 20px rgba(0, 255, 240, 0.5),
+    0 0 40px rgba(255, 42, 109, 0.2);
+}
+
+.hex-cell--hint {
+  border: 1px solid var(--neon-yellow);
+  animation: pulse-hint 1s ease-in-out infinite;
+}
+
+.neon-button {
+  border: 1px solid var(--neon-cyan);
+  background: linear-gradient(90deg, rgba(0, 255, 240, 0.2), rgba(255, 42, 109, 0.15));
+  color: var(--neon-cyan);
+  font-family: var(--font-orbitron), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  box-shadow: 0 0 16px rgba(0, 255, 240, 0.25);
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.neon-button:hover:not(:disabled) {
+  box-shadow: 0 0 28px rgba(0, 255, 240, 0.45);
+  transform: translateY(-1px);
+}
+
+.neon-button-outline {
+  border: 1px solid rgba(255, 42, 109, 0.5);
+  background: transparent;
+  color: var(--neon-pink);
+  font-family: var(--font-share-tech), monospace;
+  letter-spacing: 0.08em;
+}
+
+.glitch-text {
+  text-shadow:
+    2px 0 var(--neon-pink),
+    -2px 0 var(--neon-cyan);
+}
+
+@keyframes pulse-hint {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(249, 240, 2, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(249, 240, 2, 0.8);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.35s ease-in-out;
+}
+
+@keyframes glitch-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+  }
+}
+
+.animate-glitch-in {
+  animation: glitch-in 0.45s ease-out;
+}
