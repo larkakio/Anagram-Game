@@ -23,10 +23,10 @@ Copy [`.env.example`](.env.example) to `web/.env.local` and set:
 
 | Variable | Description |
 |----------|-------------|
-| `NEXT_PUBLIC_SITE_URL` | Production URL |
+| `NEXT_PUBLIC_SITE_URL` | `https://anagram-game-delta.vercel.app` |
 | `NEXT_PUBLIC_CHAIN_ID` | `8453` (Base mainnet) |
 | `NEXT_PUBLIC_CHECK_IN_CONTRACT_ADDRESS` | Deployed `DailyCheckIn` address |
-| `NEXT_PUBLIC_BASE_APP_ID` | From [base.dev](https://base.dev) |
+| `NEXT_PUBLIC_BASE_APP_ID` | `6a0c0d62e2b4a22f3ba56edc` (Base dashboard) |
 | `NEXT_PUBLIC_BUILDER_CODE` | e.g. `bc_…` from Settings → Builder Code |
 
 ## Deploy contract
@@ -42,7 +42,7 @@ Deployed `DailyCheckIn` on Base mainnet: `0x8D54CEe63F52Eb02B07023adc41e0587bF06
 ## Base.dev registration
 
 1. Create a project at [base.dev](https://base.dev)
-2. Set primary URL, name, icon (`web/public/app-icon.jpg`), thumbnail (`web/public/app-thumbnail.jpg`)
+2. Primary URL: `https://anagram-game-delta.vercel.app` — icon (`web/public/app-icon.jpg`), thumbnail (`web/public/app-thumbnail.jpg`)
 3. Add builder code and `NEXT_PUBLIC_BASE_APP_ID` to env
 4. Verify `<meta name="base:app_id" />` in page source
 

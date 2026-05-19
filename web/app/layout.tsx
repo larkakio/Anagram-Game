@@ -15,10 +15,14 @@ const shareTech = Share_Tech_Mono({
   weight: "400",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://anagram-game-delta.vercel.app";
+
 const baseAppId =
-  process.env.NEXT_PUBLIC_BASE_APP_ID ?? "anagram-game-placeholder";
+  process.env.NEXT_PUBLIC_BASE_APP_ID ?? "6a0c0d62e2b4a22f3ba56edc";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Anagram Game | Synapse Vault",
   description:
     "Swipe neon hex letters to crack anagram ciphers. Mobile cyberpunk word game on Base.",
